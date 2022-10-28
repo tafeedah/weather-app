@@ -1,16 +1,23 @@
-window.addEventListener('load', ()=> {
+window.addEventListener('load', () => {
     let long;
     let lat;
 
-    if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition
-        (point =>{
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(point => {
             long = point.coords.longitude;
             lat = point.coords.latitude;
 
-            const api =`url_api_link`;
+            //const proxy = "https://cors-anywhere.herokuapp.com/"
+            const api = `https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
+            fetch(api)
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                });
         });
 
-        fetch
+
     }
 });
