@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
             long = point.coords.longitude;
             lat = point.coords.latitude;
 
-            //cors-setup
+            //CORS-SETUP
             //const proxy = `https://damp-hollows-33025.herokuapp.com/`
             const api = `https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${lat},${long}`;
 
